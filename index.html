@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0;
+        }
+        #body{
+            width:100%;
+            height:1000px;
+            background-color:pink;
+        }
+        #left{
+            width:70%;
+            height:900px;
+            float:left;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        img{
+            width:50%;
+            height: 700px;
+            box-shadow: 3px 3px 3px black,-3px -3px 3px black,-3px 3px -3px black,3px -3px 3px black;
+        }
+        #right{
+            position: relative;
+            top:200px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="body">
+        <div id="left">
+            <img src="C:\Tewe22\Project\travel blog\asset\images\d.jpg" alt="" id="img">
+        </div>
+        <div id="right">
+            <center>
+                <h6>BLUR</h6>
+                <input type="range" id="blur" value="0" min="0" max="100" oninput="colorFilter()">
+            </center>
+            <hr>
+            <center>
+                <h6>BRIGHTNESS</h6>
+                <input type="range" id="brightness" value="100" min="0" max="200" oninput="colorFilter()">
+            </center>
+            <hr>
+            <center>
+                <h6>HUE</h6>
+                <input type="range" id="hue" value="0" min="0" max="360" oninput="colorFilter()">
+            </center>
+            <hr>
+            <center>
+                <h6>SATURATION</h6>
+                <input type="range" id="saturation" value="100" min="0" max="200" oninput="colorFilter()">
+            </center>
+            <hr>
+            <center>
+                <h6>CONTRAST</h6>
+                <input type="range" id="contrast" value="100" min="0" max="200" oninput="colorFilter()">
+            </center>
+            <hr>
+            <center>
+                <h6>GRAY-SCALE</h6>
+                <input type="range" id="gray-scale" value="100" min="0" max="200" oninput="colorFilter()">
+            </center>
+            <hr>
+            <center>
+                <h6>OPACITY</h6>
+                <input type="range" id="opacity" value="100" min="0" max="100" oninput="colorFilter()">
+            </center>
+            <hr>
+            <center>
+                <h6>INVERT</h6>
+                <input type="range" id="invert" value="100" min="0" max="100" oninput="colorFilter()">
+            </center>
+        </div>
+    </div> 
+    <script>
+        function colorFilter()
+        {
+            var color1=document.getElementsByTagName('input')
+            var blurvalue=color1[0].value
+            var bright=color1[1].value
+            var hue=color1[2].value
+            var sat=color1[3].value
+            var con=color1[4].value
+            var gray=color1[5].value
+            var Opac=color1[6].value
+            var inv=color1[7].value
+            console.log(blurvalue)
+            document.getElementById('img').style.filter=`blur(${blurvalue}px)brightness(${bright}%)hue-rotate(${hue}deg)saturate(${sat}%)contrast(${con}%)grayscale(${gray}%)opacity(${Opac}%)invert(${inv}%)`
+        }
+    </script>
+</body>
+</html>
